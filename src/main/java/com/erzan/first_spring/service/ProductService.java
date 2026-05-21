@@ -7,6 +7,8 @@ import com.erzan.first_spring.repository.ProductRepository;
 import com.erzan.first_spring.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
@@ -30,5 +32,9 @@ public class ProductService {
                 .build();
 
         return productRepository.save(product);
+    }
+
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 }
