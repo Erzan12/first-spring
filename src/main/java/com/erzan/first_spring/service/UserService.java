@@ -5,6 +5,8 @@ import com.erzan.first_spring.entity.User;
 import com.erzan.first_spring.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -21,5 +23,9 @@ public class UserService {
                 .build();
 
         return userRepository.save(user);
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }
