@@ -1,7 +1,9 @@
 package com.erzan.first_spring.service;
 
 import com.erzan.first_spring.dto.UserRequest;
+import com.erzan.first_spring.dto.UserResponse;
 import com.erzan.first_spring.entity.User;
+import com.erzan.first_spring.exception.ResourceNotFoundException;
 import com.erzan.first_spring.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,5 +29,10 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
     }
 }

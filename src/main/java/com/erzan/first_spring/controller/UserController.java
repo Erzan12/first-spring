@@ -1,6 +1,7 @@
 package com.erzan.first_spring.controller;
 
 import com.erzan.first_spring.dto.UserRequest;
+import com.erzan.first_spring.entity.Product;
 import com.erzan.first_spring.entity.User;
 import com.erzan.first_spring.repository.UserRepository;
 import com.erzan.first_spring.service.UserService;
@@ -27,5 +28,10 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return userService.getUserById(id);
     }
 }
