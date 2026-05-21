@@ -34,4 +34,10 @@ public class UserController {
     public User getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
+
+    @PatchMapping("/{id}")
+    public User updateUser(@PathVariable Long id,
+                           @RequestBody UserRequest request) {
+        return userService.updateUser(id, request);
+    }
 }

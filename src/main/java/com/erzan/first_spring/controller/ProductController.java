@@ -32,4 +32,10 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
+
+    @PatchMapping("/{id}")
+    public Product updateProduct(@PathVariable Long id,
+                                 @RequestBody ProductRequest request) {
+        return productService.updateProduct(id, request);
+    }
 }
