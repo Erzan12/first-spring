@@ -8,7 +8,7 @@ public class ProductRequest {
 
     @NotBlank
     private String name;
-    
+
     private Double price;
 
     private Long userId;
